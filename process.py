@@ -60,7 +60,7 @@ def upload_to_s3(file_path):
                   aws_session_token = f"{AWS_SESSION_TOKEN}",
                 )
 
-    object_name = os.path.basename(file_path)
+    object_name = f"{OUTPUT_FOLDER}/{os.path.basename(file_path)}"
 
     s3.upload_file(
         file_path,
