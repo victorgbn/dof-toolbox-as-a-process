@@ -1,0 +1,5 @@
+copernicusmarine
+boto3
+xarray
+netcdf4
+python-dotenv
