@@ -17,7 +17,7 @@ OUTPUT_FOLDER = os.environ.get("OUTPUT_FOLDER", "results")
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 AWS_SESSION_TOKEN = os.environ.get("AWS_SESSION_TOKEN")
-AWS_S3_ENDPOINT = os.environ.get("AWS_S3_ENDPOINT")
+AWS_S3_ENDPOINT = os.environ.get("AWS_S3_ENDPOINT", "https://minio.dive.edito.eu")
 AWS_DEFAULT_REGION = os.environ.get("AWS_DEFAULT_REGION")
 BUCKET_NAME = os.environ.get("BUCKET_NAME")
 
@@ -35,11 +35,10 @@ def download_data():
             start_datetime=START_DATE,
             end_datetime=END_DATE,
         )
+        print("✅ Données récupérées")
     except Exception as e:
         print("❌ Erreur lors de la récupération des données :", e)
         raise
-
-    print("✅ Données récupérées")
 
     processed = ds[VARIABLE].mean(dim=list(ds[VARIABLE].dims)[-2:])
     processed = processed.to_dataset(name=f"mean_{VARIABLE}")
