@@ -71,6 +71,12 @@ def upload_to_s3(file_path):
 
 
 def main():
+    print("AWS S3 Endpoint:", AWS_S3_ENDPOINT)
+    print("AWS Region:", AWS_DEFAULT_REGION)
+    print("S3 Bucket Name:", BUCKET_NAME)
+    print("AWS Access Key ID:", AWS_ACCESS_KEY_ID)
+    print("AWS Secret Access Key:", AWS_SECRET_ACCESS_KEY)
+    print("AWS Session Token:", AWS_SESSION_TOKEN)
     local_file = download_data()
     upload_to_s3(local_file)
 
