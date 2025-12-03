@@ -19,7 +19,7 @@ AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 AWS_SESSION_TOKEN = os.environ.get("AWS_SESSION_TOKEN")
 AWS_S3_ENDPOINT = os.environ.get("AWS_S3_ENDPOINT", "https://minio.dive.edito.eu")
 AWS_DEFAULT_REGION = os.environ.get("AWS_DEFAULT_REGION")
-BUCKET_NAME = os.environ.get("BUCKET_NAME")
+BUCKET_NAME = os.environ.get("AWS_BUCKET_NAME")
 
 LOCAL_FILE = f"{OUTPUT_FOLDER}/result_{DATASET_ID}_{VARIABLE}.nc"
 
